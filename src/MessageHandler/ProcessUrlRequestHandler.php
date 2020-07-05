@@ -23,7 +23,6 @@ class ProcessUrlRequestHandler implements MessageHandlerInterface
 
     public function __invoke(ProcessUrlRequest $message)
     {
-        sleep(10);
         $urlEntity = $this->em->getRepository(UrlCheck::class)->find($message->getUrlId());
         $urlEntity->setStatus(UrlCheck::PROCESSING_STATUS);
         $this->em->persist($urlEntity);
@@ -44,7 +43,5 @@ class ProcessUrlRequestHandler implements MessageHandlerInterface
 
         $this->em->persist($urlEntity);
         $this->em->flush();
-
-
     }
 }
