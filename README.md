@@ -13,8 +13,8 @@ curl -X POST \
   
 # Installation
 1. composer install (add dependencies)
-2. bin/console messenger:setup-transports (create messenger queues)
-3. bin/console doctrine:database:create (create empty database)
+2. bin/console doctrine:database:create (create empty database)
+3. bin/console messenger:setup-transports (create messenger queues)
 4. bin/console doctrine:migrations:migrate (migrate database)
 5. symfony:serve (start server)
 6. optional https://symfony.com/doc/current/messenger.html#supervisor-configuration (numprocs settings)
