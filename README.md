@@ -1,5 +1,5 @@
 # Dedicated worker
-This system is supposed to check what kind of status code is being returned by any url passed to its API.
+This system (by async jobs) is supposed to check what kind of status code is being returned by any url passed to its API.
 
 # Usage
 There is a need to fire a POST request to your-server-ip/api/urls and in body paste array of urls. E.g.:
