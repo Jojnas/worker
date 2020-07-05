@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200705100939 extends AbstractMigration
+final class Version20200705132152 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -20,13 +20,12 @@ final class Version20200705100939 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE url_check (id INT AUTO_INCREMENT NOT NULL, url VARCHAR(255) NOT NULL, status VARCHAR(16) NOT NULL, http_code INT DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE INDEX url_idx ON url_check (url)');
     }
 
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE url_check');
-        $this->addSql('DROP TABLE messenger_messages');
+        $this->addSql('DROP INDEX url_idx ON url_check');
     }
 }
