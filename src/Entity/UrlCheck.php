@@ -4,13 +4,20 @@ namespace App\Entity;
 
 use App\Repository\UrlCheckRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Index;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UrlCheckRepository::class)
+ * @ORM\Table(indexes={@Index(name="url_idx", columns={"url"})})
  */
 class UrlCheck
 {
+    const NEW_STATUS = 'new';
+    const PROCESSING_STATUS = 'processing';
+    const DONE_STATUS = 'done';
+    const ERROR_STATUS = 'error';
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -27,7 +34,7 @@ class UrlCheck
     /**
      * @ORM\Column(type="string", length=16)
      */
-    private $status;
+    private $status = self::NEW_STATUS;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -74,4 +81,5 @@ class UrlCheck
 
         return $this;
     }
+
 }

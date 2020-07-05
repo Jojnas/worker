@@ -19,32 +19,8 @@ class UrlCheckRepository extends ServiceEntityRepository
         parent::__construct($registry, UrlCheck::class);
     }
 
-    // /**
-    //  * @return UrlCheck[] Returns an array of UrlCheck objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function createNew(): UrlCheck
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return new UrlCheck();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?UrlCheck
-    {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

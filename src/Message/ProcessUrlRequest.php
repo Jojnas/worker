@@ -6,15 +6,15 @@ namespace App\Message;
 
 class ProcessUrlRequest
 {
-    private $item;
+    private $urlId;
 
-    public function __construct(string $item)
+    public function __construct(int $urlId)
     {
-        $this->item = $item;
+        $this->urlId = $urlId;
     }
 
-    public function getItem(): string
+    public function getUrlId(): int
     {
-        return $this->item;
+        return $this->urlId;
     }
 }
