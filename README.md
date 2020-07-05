@@ -16,5 +16,5 @@ curl -X POST \
 2. bin/console doctrine:database:create (create empty database)
 3. bin/console messenger:setup-transports (create messenger queues)
 4. bin/console doctrine:migrations:migrate (migrate database)
-5. symfony:serve (start server)
+5. symfony serve (start server)
 6. optional https://symfony.com/doc/current/messenger.html#supervisor-configuration (numprocs settings)
