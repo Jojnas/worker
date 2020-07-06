@@ -15,7 +15,8 @@ There is a need to run locally messenger for async jobs. Either set create a con
   
 # Installation
 1. composer install (add dependencies)
-2. bin/console doctrine:database:create (create empty database)
-3. bin/console messenger:setup-transports (create messenger queues)
-4. bin/console doctrine:migrations:migrate (migrate database)
-5. symfony serve (start server)
+2. in .env file adjust DATABASE_URL settings or you may create .env.local to avoid GIT diffs 
+3. bin/console doctrine:database:create (create empty database)
+4. bin/console messenger:setup-transports (create messenger queues)
+5. bin/console doctrine:migrations:migrate (migrate database)
+6. symfony serve (start server)
